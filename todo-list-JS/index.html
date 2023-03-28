@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      button {
+        border: 3px solid #20b60c;
+        background-color: transparent;
+        border-radius: 400px;
+        padding: 12px 8px;
+        cursor: pointer;
+        margin: 10px;
+      }
+      .container-todo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: #a80cb6;
+        height: 100vh;
+      }
+      form {
+        display: flex;
+        justify-content: space-between;
+
+        align-items: center;
+      }
+      input {
+        background-color: rgb(6, 223, 39);
+        outline: none;
+        border: none;
+        border-radius: 22px;
+        padding: 15px 15px 15px 15px;
+        width: 200px;
+      }
+      input:focus {
+        background-color: yellow;
+      }
+      input:visited {
+        background-color: rgb(23, 23, 3);
+      }
+      ul {
+        background-color: rgba(0, 255, 255, 0);
+        width: 300px;
+        padding: 3px;
+      }
+      li {
+        list-style: none;
+        margin: 10px 0;
+        background-color: lightblue;
+        border-radius: 22px;
+        padding: 10px 15px 10px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      span {
+        font-family: sans-serif;
+        font-size: 22px;
+      }
+      .fa-trash {
+        color: red;
+        cursor: pointer;
+      }
+      .fa-pen {
+        color: #1c00bc;
+        cursor: pointer;
+      }
+      .box-pen {
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .line-through {
+        text-decoration: line-through;
+      }
+      select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline: none;
+        border: none;
+        color: rgb(255, 200, 0);
+        width: 9rem;
+        cursor: pointer;
+        padding: 1rem;
+      }
+      .select {
+        position: relative;
+        overflow: hidden;
+        border-radius: 50px;
+      }
+      .select::after {
+        content: "\25BC";
+        position: absolute;
+        background-color: rgb(255, 200, 0);
+        top: 0;
+        right: 0;
+        transition: all 0.3s ease;
+        padding: 1rem;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-todo">
+      <h1>TODO LIST</h1>
+      <form action="">
+        <input type="text" name="myInput" id="" />
+        <button>
+          <i
+            class="fa-solid fa-circle-down fa-flip fa-2xl"
+            style="color: #20b60c"
+          ></i>
+        </button>
+        <div class="select">
+          <select name="todos" id="filter-todo">
+            <option value="all">All</option>
+            <option value="completed">Completed</option>
+            <option value="incompleted">Incompleted</option>
+          </select>
+        </div>
+      </form>
+
+      <ul class="ul-todo"></ul>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
